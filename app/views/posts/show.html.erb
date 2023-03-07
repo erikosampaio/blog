@@ -18,10 +18,10 @@
 <div class="m-5">
   <div class="text-center">
     <h4>
-      <%= pluralize(@post.comments.count, 'Comentário') %>
-
       <% if @post.comments.none? %>
-        <span class="badge badge-sucess">Seja o primeiro a comentar!</span>
+        <span class="badge bg-success">Seja o primeiro a comentar!</span>
+      <% else %>
+        <%= pluralize(@post.comments.count, 'Comentário') %>
       <% end %>
     </h4>
   </div>
