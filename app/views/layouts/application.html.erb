@@ -28,6 +28,19 @@
         </div>
       <% end %>
 
+      <div class="row">
+        <div class="col-4 offset-8 mb-3">
+          <%= form_with url: search_posts_path, method: :get, local: true do |form| %>
+            <div class="input-group">
+              <%= form.search_field :q, class:'form-control', aria_describedby:"button-addon2", aria_label:"Busca", required:true, placeholder:'Busca', value: params[:q] %>
+
+              <%= form.submit 'Buscar', class:'btn btn-outline-secondary', id:"button-addon2",
+              data: { disable_with: 'Buscando...' } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
       <%= yield %>
     </div>
 

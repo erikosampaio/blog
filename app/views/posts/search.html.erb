@@ -1,0 +1,14 @@
+<h2 class="text-muted">
+  <% if @posts.any? %>
+    <%= pluralize(@posts.count, 'resultado encontrado') %> para '<%= params[:q].upcase %>':
+  <% else %>
+    Nenhum resultado encontrado para '<%= params[:q].upcase %>'.
+  <% end %>
+</h2>
+
+<%= render @posts %>
+
+<%# O render também pode ser assim: %>
+<%# <%= @posts.each do |post| %>
+  <%# <%= render post %>
+<%# <% end %>
